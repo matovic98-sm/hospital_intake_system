@@ -1,0 +1,22 @@
+Hospital Intake System Design Memo
+
+The hospital intake system utilizes a binary tree to store doctor names in individual nodes that 
+represent relationships within a reporting hierarchy. This program includes a DoctorNode class to 
+store each doctor's name and references to their left and right child nodes, as well as a DoctorTree
+class to manage the tree and store a root that holds the lead doctor. The insert() method uses 
+recursion to search through the tree and add doctors under the appropriate parent. The preorder(), 
+inorder(), and postorder() methods also use recursion to visit the nodes in different orders. A 
+software engineer might use preorder traversal to display a hierarchy starting with the lead doctor,
+inorder traversal to retrieve sorted values from a binary search tree, or postorder traversal when 
+processing child nodes before their parent. Trees are appropriate for representing hierarchical 
+information because they make parent-child relationships easier to organize and navigate compared 
+with a flat list.
+
+For the emergency queue, I used a min heap to organize patients based on their urgency scores. 
+Each Patient object stores a patient's name and urgency score from 1 to 10, with 1 representing the 
+highest urgency. The insert() method adds patients to the heap, while heapify_up() and heapify_down() 
+maintain the heap structure when patients are added or removed. The peek() method identifies the 
+highest-priority patient without removing them, and remove_min() removes and returns that patient. 
+Heaps are useful for simulating real-time systems like emergency intake because patients can be 
+prioritized by urgency as they arrive. This allows the system to identify which patient should 
+receive attention first instead of simply processing patients in the order they entered the queue.
